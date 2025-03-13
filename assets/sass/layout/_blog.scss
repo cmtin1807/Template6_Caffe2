@@ -1,0 +1,58 @@
+.blog{
+    .blog-item{
+        background: $black;
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .blog-image{
+            border-radius: 10px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                object-fit: cover;
+                -webkit-transition: all 0.25s linear 0s;
+                transition: all 0.25s linear 0s;
+            }
+        }
+        .blog-detail{
+            .user-image{
+                width: 40px;
+                height: 40px;
+                border-radius: 40px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    object-fit: cover;
+
+                }
+            }
+            h5{
+                transition: $transition;
+                @include media-query(1199px){
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1; 
+                    line-clamp: 1; 
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+        &:hover{
+            .blog-image{
+                img{
+                    -webkit-transform: scale(1.05);
+                    transform: scale(1.05);
+                    -webkit-transition: all 0.25s linear 0s;
+                    transition: all 0.25s linear 0s;
+                }
+            }
+            h5{
+                color: $accent-2;
+                transition: $transition;
+            }
+        }
+    }
+}

@@ -1,0 +1,171 @@
+.blog-detail-wrapper {
+    padding: clamp(16px, 1.25vw, 32px);
+    border-radius: $br-20;
+
+    .author-info {
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    .qoutes {
+        padding: clamp(16px, 1.25vw, 32px);
+        border-radius: $br-20;
+        border-left: 2px solid $accent-2;
+    }
+
+    .blog-post-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media-query(992px) {
+            flex-direction: column;
+            flex-wrap: wrap;
+            row-gap: 16px;
+        }
+
+        .blog-post-block {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            @include media-query(575px) {
+                gap: 8px;
+            }
+
+            .arrow-block {
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                width: clamp(28px, 1.667vw, 64px);
+                height: clamp(28px, 1.667vw, 64px);
+                border: 0;
+                border-radius: 5px;
+                background: transparent;
+                transition: $transition;
+                background: $light-black;
+
+                svg {
+                    path {
+                        stroke: $accent-2;
+                        transition: $transition;
+                    }
+                }
+            }
+
+            .post-text {
+                transition: $transition;
+            }
+
+            br {
+                @include media-query(1499px) {
+                    display: none;
+                }
+            }
+
+            .post-image {
+                width: clamp(48px, 4.167vw, 140px);
+                height: clamp(48px, 4.167vw, 140px);
+            }
+
+            &:hover {
+                .arrow-block {
+                    background: $accent-2;
+                    border: 1px solid $accent-2;
+
+                    svg {
+                        path {
+                            transition: $transition;
+                            stroke: $black;
+
+                        }
+                    }
+                }
+
+                .post-text {
+                    color: $accent-2;
+                    transition: $transition;
+                }
+            }
+        }
+    }
+}
+
+.review-area {
+    .review-block {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+
+        @include media-query(490px) {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &.block-2 {
+            padding-left: clamp(32px, 5vw, 120px);
+        }
+
+        .image-box {
+            display: flex;
+            flex-shrink: 0;
+
+            img {
+                border-radius: 5px;
+                width: clamp(32px, 2.083vw, 96px);
+            }
+        }
+
+        .text-box {
+            padding: clamp(10px, 0.833vw, 24px);
+            padding-top: 0;
+            border-radius: clamp(6px, 0.521vw, 15px);
+
+            h6 {
+                @include media-query(490px) {
+                    font-size: 4vw;
+                }
+            }
+
+            .reply-btn {
+                background: $light-black;
+                padding: clamp(6px, 0.417vw, 12px) clamp(12px, 0.833vw, 24px);
+                border-radius: 5px;
+                color: $white;
+                transition: $transition;
+
+                @include media-query(490px) {
+                    font-size: 2.8vw;
+
+                }
+
+                &:hover {
+                    transition: $transition;
+                    background: $accent-1;
+                    box-shadow: 0px 0px 20px 1px $accent-1;
+                }
+            }
+        }
+    }
+}
+
+.input-block {
+    position: relative;
+
+    svg, i {
+        position: absolute;
+        top: 18px;
+        right: 16px;
+
+        @include media-query(1024px) {
+            top: 16px;
+        }
+        @include media-query(820px) {
+            top: 13px;
+        }
+        @include media-query(490px) {
+            top: 12px;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+
+.contact-section{
+    .map{
+        height: 100%;
+        .map-wrapper{
+            border-radius: $br-15;
+            background: $black;
+            height: 100%;
+            iframe{
+                border-radius: $br-15;
+                width: 100%;
+                height: clamp(350px, 24.375vw, 800px);
+                @include media-query(1599px){
+                    height: 100%;
+                }
+                @include media-query(1199px){
+                    height: 350px;
+                }
+            }
+        }
+    }
+    .contact-wrapper{
+        .form-container{
+            padding: clamp(24px, 1.667vw, 48px);
+            border-radius: $br-15;
+            background: $black;
+            height: 100%;
+            @include media-query(992px){
+                height: auto;
+            }
+           
+        }
+        .contact-text-container{
+            padding: clamp(24px, 1.667vw, 48px);
+            border-radius: $br-15;
+            background: $black;
+            height: 100%;
+            @include media-query(992px){
+                height: auto;
+            }
+            
+            .detail-block{
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+                .icon-box{
+                    width: clamp(28px, 1.667vw, 48px);
+                    height: clamp(28px, 1.667vw, 48px);
+                    display: grid;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: $br-5;
+                }
+            }
+        }
+    }
+
+}

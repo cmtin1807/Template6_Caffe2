@@ -1,0 +1,181 @@
+
+.customer-container{
+    .customer-wrapper{
+        background-color: $black;
+        border-top: 1px solid $accent-2;
+        border-radius: $br-5;
+        padding: clamp(16px, 1.25vw, 32px);
+        .sign-form{
+            display: none;
+            
+        }
+    }
+}
+.sign-submit-btn{
+    width: 25%;
+    @include media-query(490px){
+        width: 100%;
+    }
+}
+
+.billing-detail{
+    .shipping-radio-container{
+        padding: clamp(16px, 1.25vw, 32px);
+        border-radius: $br-10;
+        .plans {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                @include media-query(768px){
+                    flex-wrap: wrap;
+                }
+                
+            .plan {
+                cursor: pointer;
+                width: 100%;
+                input[type="radio"] {
+                    position: absolute;
+                    opacity: 0;
+                }
+                .plan-content {
+                    display: flex;
+                    gap: 16px;
+                    padding: 16px 60px 16px 16px;
+                    height: 120px;
+                    border: 1px solid $light-grey;
+                    border-radius: 10px;
+                    position: relative;
+                    align-items: center;
+                    img{
+                        @include media-query(490px){
+                            width: 30%;
+                        }
+                    }
+                    &.content-2{
+                        height: 80px;
+                        
+                    }
+                    
+                    .plan-details {
+                        display: inline-block;
+                        width: 100%;
+                    }
+                }
+                input[type="radio"] {
+                    & + .plan-content {
+                        -webkit-transition: ease-in 0.3s;
+                        -o-transition: ease-in 0.3s;
+                        transition: ease-in 0.3s;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            height: 24px;
+                            width: 24px;
+                            right: 20px;
+                            top: 20px;
+                            border-radius: 100%;
+                            border: 3px solid $black;
+                            -webkit-box-shadow: 0px 0px 0px 2px $accent-1;
+                            box-shadow: 0px 0px 0px 2px $accent-1;
+                            transform: translate(-50%);
+                            top: 46px;
+                            right: 10px;
+                        }
+                    }
+                }
+                input[type="radio"]:checked {
+                    & + .plan-content {
+                        -webkit-transition: ease-in 0.3s;
+                        -o-transition: ease-in 0.3s;
+                        transition: ease-in 0.3s;
+                        &:after {
+                            content: "";
+                            background: $accent-1;
+                            border-radius: 100%;
+                            border: 5px solid $black;
+                            -webkit-box-shadow: 0px 0px 0px 2px $accent-1;
+                            box-shadow: 0px 0px 0px 2px $accent-1;
+                        }
+                    }
+                }
+
+                input[type="radio"] {
+                    & + .content-2 {
+                        -webkit-transition: ease-in 0.3s;
+                        -o-transition: ease-in 0.3s;
+                        transition: ease-in 0.3s;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            height: 24px;
+                            width: 24px;
+                            right: 20px;
+                            top: 20px;
+                            border-radius: 100%;
+                            border: 3px solid $black;
+                            -webkit-box-shadow: 0px 0px 0px 2px $accent-1;
+                            box-shadow: 0px 0px 0px 2px $accent-1;
+                            transform: translate(-50%);
+                            top: 27px;
+                            right: 10px;
+                        }
+                    }
+                }
+                input[type="radio"]:checked {
+                    & + .content-2 {
+                        -webkit-transition: ease-in 0.3s;
+                        -o-transition: ease-in 0.3s;
+                        transition: ease-in 0.3s;
+                        &:after {
+                            content: "";
+                            background: $accent-1;
+                            border-radius: 100%;
+                            border: 5px solid $black;
+                            -webkit-box-shadow: 0px 0px 0px 2px $accent-1;
+                            box-shadow: 0px 0px 0px 2px $accent-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.summary-container{
+    padding: clamp(16px, 1.25vw, 32px);
+    border-radius: $br-10;
+    background: $black;
+    
+    .item-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .icon-box{
+            width: clamp(52px, 4.167vw, 150px);
+            height: clamp(52px, 4.167vw, 150px);
+            padding: 4px;
+            border-radius: $br-5;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .input-block{
+        input{
+            width: 18vw;
+            @include media-query(1599px){
+                width: 62%;
+            }
+            @include media-query(1024px){
+                width: 84%;
+            }
+            @include media-query(490px){
+                width: 62%;
+            }
+            @include media-query(399px){
+                width: 59%;
+            }
+        }
+    }
+
+}

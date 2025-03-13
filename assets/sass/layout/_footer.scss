@@ -1,0 +1,61 @@
+footer {
+    .footer-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        gap: clamp(16px, 1.25vw, 40px);
+        @include media-query(820px){
+            flex-wrap: wrap;
+        }
+        @include media-query(490px){
+            padding: 0 10px;
+        }
+
+        .footer-main-box {
+            width: 29.167vw;
+            @include media-query(820px){
+                width: 100%;
+            }
+            .box-wrapper {
+                width: 21.563vw;
+                @include media-query(820px){
+                    width: 100%;
+                }
+                .name-price {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                }
+            }
+        }
+
+        .footer-link-box {
+            width: 19.01vw;
+            @include media-query(820px){
+                width: 29.3%;
+            }
+            @include media-query(490px){
+                width: 80.5%;
+            }
+            &.v-2{
+                @include media-query(490px){
+                    width: 46.5%;
+                }
+            }
+            .contact-list{
+                li{
+                    gap: 8px;
+                    @include media-query(490px){
+                        gap: 12px;
+                    }
+                    svg{
+                        @include media-query(490px){
+                            width: 21px;
+                            height: 21px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

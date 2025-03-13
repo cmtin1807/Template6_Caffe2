@@ -1,0 +1,37 @@
+
+.newsletter{
+    @include media-query(820px){
+        padding: clamp(24px, 3.902vw, 48px) 0;
+    }
+    .newletter-wrapper{
+        display: flex;
+        align-items: center;
+        gap: 110px;
+        @include media-query(490px){
+            flex-direction: column;
+            gap: 16px;
+            padding: 0 16px;
+        }
+        .newletter-image{
+            @include media-query(490px){
+                text-align: center;
+            }
+            img{
+                @include media-query(490px){
+                    width: 60%;
+                }
+            }
+        }
+        form{
+            display: flex;
+            align-items: center;
+            gap: clamp(16px, 1.25vw, 40px);
+            input{
+                width: 33.125vw;
+                @include media-query(490px){
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

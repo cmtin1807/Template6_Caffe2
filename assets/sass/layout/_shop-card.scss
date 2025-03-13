@@ -1,0 +1,256 @@
+.special{
+    
+    .special-item{
+        display: flex;
+        width: 100%;
+        padding: 24px;
+        flex-direction: column;
+        gap: 24px;
+        border-radius: 20px;
+        background: $black;
+        cursor: pointer;
+
+        .item-image{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: $light-black;
+            border-radius: 10px;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .sale{
+                position: absolute;
+                top: 8px;
+                left: 8px;
+                padding: 4px 16px;
+                background: $black;
+                border-radius: 5px;
+                z-index: 10;
+            }
+            .icon{
+                position: absolute;
+                top: 8px;
+                right: -48px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                z-index: 10;
+                transition: $transition;
+
+                a{
+                    padding: 8px;
+                    background: $black;
+                    border-radius: 5px;
+                    font-size: 20px;
+                    color: $accent-2;
+                    transition: $transition;
+                    &:hover{
+                        color: $accent-1;
+
+                        .stroke-sec{
+                            stroke: $accent-1;
+                        }
+                    }
+                }
+            }
+        }
+        .item-detail{
+            .rating{
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-size: 16px;
+                color: $accent-2;
+            }
+        }
+        &:hover{
+            .item-image{
+                .icon{
+                    right: 8px;
+                }
+            }
+        }
+    }
+}
+
+
+.shop-grid-topbar-container {
+    background: $black;
+    padding: clamp(12px, 0.833vw, 32px);
+    border-radius: $br-10;
+
+    .shop-grid-bottombar {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @include media-query(490px) {
+            flex-wrap: wrap;
+        }
+
+        .filter-tag {
+            padding: 4px 8px;
+            border-radius: 2px;
+            background: $light-black;
+        }
+    }
+
+    .shop-grid-topbar {
+        padding: 12px 16px;
+        height: 56px;
+        background-color: $black;
+        border-radius: $br-10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media-query(490px) {
+            height: auto;
+        }
+
+        &.v-2 {
+            @include media-query(490px) {
+                flex-direction: column;
+                gap: 16px;
+                place-items: flex-start;
+                margin-bottom: 12px;
+            }
+        }
+
+        .first-block {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            .visual-btns {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                &.v-2 {
+                    @include media-query(490px) {
+                        gap: 32px;
+                    }
+                }
+
+                .visual-box {
+                    svg {
+                        path {
+                            fill: $white;
+                            transition: $transition;
+                        }
+                    }
+
+                    &:hover,
+                    &.active {
+                        svg {
+                            path {
+                                transition: $transition;
+                                fill: $accent-2;
+                            }
+                        }
+                    }
+
+                    &.shop-filter {
+                        padding: 8px 16px;
+                        background: $accent-1;
+                        border-radius: 5px;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        color: $white;
+                        transition: $transition;
+                        svg{
+                            path{
+                                transition: $transition;
+                            }
+                        }
+                        
+                        &:hover {
+                            color: $black;
+                            background: $accent-2;
+                                svg{
+                                    path{
+                                        stroke: $black;
+                                        transition: $transition;
+                                    }
+                                }
+                        }
+                    }
+                }
+            }
+        }
+
+        .second-block {
+            .grid-icons {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                &.v-2 {
+                    @include media-query(490px) {
+                        gap: 24px;
+                    }
+                }
+
+                .grid-dots {
+                    svg {
+                        path {
+                            fill: $lightest-gray;
+                            transition: $transition;
+                        }
+                    }
+
+                    &:hover,
+                    &.active {
+                        svg {
+                            path {
+                                transition: $transition;
+                                fill: $accent-1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .last-block {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            &.v-2 {
+                @include media-query(490px) {
+                    width: 100%;
+                }
+            }
+
+            .drop-container {
+                background-color: $light-black;
+                padding: 6px 5px 6px 12px;
+                border-radius: 5px;
+
+                &.v-2 {
+                    @include media-query(490px) {
+                        width: 100%;
+                    }
+                }
+
+                .wrapper-dropdown {
+                    &.v-2 {
+                        @include media-query(490px) {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.brand {
+    .brand-slider-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            pointer-events: none;
+            background: linear-gradient(90deg, #191919 0%, rgba(25, 25, 25, 0.17) 29.5%, rgba(25, 25, 25, 0.00) 50%, rgba(25, 25, 25, 0.30) 74%, #191919 100%);
+        }
+
+        .brand-slider {
+            width: 74.792vw;
+            margin: 0 auto;
+            overflow: visible;
+            .slick-list {
+                overflow: visible;
+            }
+
+            .slider-item {
+                padding: 0 0.625vw;
+                
+                .logo {
+                    width: clamp(180px, 13.958vw, 310px);
+                    height: clamp(86px, 5.208vw, 180px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                    border: 1px solid rgba(250, 250, 250, 0.20);
+                    background: $black;
+                    
+                    
+                    @include media-query(820px){
+                        width: clamp(120px, 15.854vw, 190px);
+                        height: clamp(60px, 8.537vw, 120px);
+                    }
+
+                    @include media-query(490px){
+                        width: 21.837vw;
+                        height: 14.286vw;
+                    }
+                    img{
+                        @include media-query(1024px){
+                            transform: scale(0.85);
+                        }
+                        @include media-query(490px){
+                            transform: scale(0.75);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.slider-rightSlider {
+            .slider-item {
+                direction: ltr;
+            }
+        }
+    }
+}

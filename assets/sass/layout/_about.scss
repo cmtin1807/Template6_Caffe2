@@ -1,0 +1,29 @@
+.about{
+    .about-detail{
+        .section-name{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+    
+            &::before{
+                content: '';
+                width: 24px;
+                height: 1px;
+                background: $white;
+            }
+        }
+    }
+    .about-image{
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        &::before{
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.30);
+            z-index: 1;
+            pointer-events: none;
+        }
+    }
+}

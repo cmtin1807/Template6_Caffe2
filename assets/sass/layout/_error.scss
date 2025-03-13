@@ -1,0 +1,20 @@
+
+.error-section{
+
+    .error-wrapper{
+        padding: clamp(24px, 2.083vw, 80px);
+        h1{
+            font-size: clamp(100px, 20.833vw, 420px);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 80%;
+        }
+        p{
+            br{
+                @include media-query(575px){
+                    display: none;
+                }
+            }
+        }
+    }
+}
